@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Produtos | NEX7 STEP</title>
+<meta name="description" content="Plaquinhas NFC e QR Code, chaveiros de programador e peças em impressão 3D da Nex7 Step.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000'/%3E%3Ctext x='32' y='47' font-size='42' font-weight='900' font-style='italic' text-anchor='middle' fill='%236b1fad' font-family='Arial'%3E7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.catnav{position:sticky;top:64px;z-index:5;margin:0 -24px 28px;padding:14px 24px;background:#fffffff2;border-bottom:1px solid var(--line);flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}
+.catnav button{flex:none;white-space:nowrap}
+.vazio{color:var(--mute);padding:32px 0}
+</style>
+</head>
+<body id="top">
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="NEX7 STEP, voltar ao início"><img src="assets/logo.png" alt="NEX7 STEP" width="520" height="46"></a>
+    <button class="burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav aria-label="Principal">
+      <a href="index.html#sobre">Quem Somos</a>
+      <a href="index.html#servicos">Serviços</a>
+      <a href="index.html#projetos">Projetos</a>
+      <a href="produtos.html" aria-current="page">Produtos</a>
+      <a class="btn" href="index.html#contato">Fale Conosco</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="ph dk">
+    <div class="wrap">
+      <h1>Nossos produtos</h1>
+      <p class="lead">Plaquinhas NFC e QR Code e chaveiros, feitos em impressão 3D. Toque em “Pedir” e a conversa já abre no WhatsApp.</p>
+    </div>
+  </section>
+
+  <section style="padding:56px 0 96px">
+    <div class="wrap">
+      <div class="tabs catnav" id="catnav" role="group" aria-label="Categorias de produtos"></div>
+      <div class="gl" id="gl"></div>
+    </div>
+  </section>
+
+  <section class="alt band">
+    <div class="wrap">
+      <h2 class="rv">Não achou o que procura?</h2>
+      <p class="lead">Fazemos plaquinhas, chaveiros e peças personalizadas com a sua marca, cores e ideia.</p>
+      <div class="cta">
+        <a class="btn" href="https://wa.me/5534988387442?text=Ol%C3%A1!%20Quero%20um%20produto%20personalizado." target="_blank" rel="noopener">Pedir produto personalizado</a>
+        <a class="btn out" href="index.html#contato">Outros contatos</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="wm" href="index.html#inicio" aria-label="NEX7 STEP">NEX<b>7</b> STEP</a>
+        <p>A 7 passos do futuro. Sistemas, sites, plaquinhas NFC, impressão 3D e assistência técnica.</p>
+        <a class="ig" href="https://instagram.com/nex7step" target="_blank" rel="noopener">Siga @nex7step</a>
+      </div>
+      <nav class="fcol" aria-label="Rodapé">
+        <h4>Navegue</h4>
+        <a href="index.html#sobre">Quem somos</a>
+        <a href="index.html#servicos">Serviços</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="index.html#projetos">Projetos</a>
+      </nav>
+      <div class="fcol">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5534988387442" target="_blank" rel="noopener">(34) 98838-7442</a>
+        <a href="https://wa.me/5534997625702" target="_blank" rel="noopener">(34) 99762-5702</a>
+        <a href="mailto:contato.nex7step@gmail.com">contato.nex7step@gmail.com</a>
+      </div>
+    </div>
+    <div class="fbar">
+      <span>© 2026 Nex7 Step · Tecnologia, impressão 3D e suporte</span>
+      <a href="#top" class="up" aria-label="Voltar ao topo">Voltar ao topo ↑</a>
+    </div>
+  </div>
+</footer>
+
+<div class="mdl" id="mdl" role="dialog" aria-modal="true" aria-label="Visualização do produto" hidden>
+  <button class="mx" id="mx" aria-label="Fechar">✕</button>
+  <button class="mn mp" id="mp" aria-label="Anterior">‹</button>
+  <button class="mn mnx" id="mnx" aria-label="Próxima">›</button>
+  <figure>
+    <img id="mi" alt="">
+    <figcaption><strong id="mt"></strong><span id="md"></span><a id="mw" class="btn" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></figcaption>
+  </figure>
+</div>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function () {
+  // Os produtos e categorias vêm do banco (painel em admin/). Se o banco não responder,
+  // o site mostra esta lista de reserva.
+  var CATS = [["plaquinhas", "Plaquinhas NFC e QR Code"], ["chaveiros", "Chaveiros"]];
+  var P = [
+    ["plaquinhas", "assets/plaquinha-google.webp", "Plaquinha Google", "Leva o cliente direto para avaliar sua empresa no Google."],
+    ["plaquinhas", "assets/plaquinha-pix.webp", "Plaquinha Pix", "Receba pagamentos sem precisar ditar a chave."],
+    ["plaquinhas", "assets/plaquinha-instagram.webp", "Plaquinha Instagram", "Mais seguidores com um toque ou uma leitura do QR Code."],
+    ["plaquinhas", "assets/plaquinha-whatsapp.webp", "Plaquinha WhatsApp", "Abre a conversa com o seu cliente na hora."],
+    ["plaquinhas", "assets/plaquinha-wifi.webp", "Plaquinha Wi-Fi (PETG)", "O cliente conecta na rede sem digitar a senha."],
+    ["plaquinhas", "assets/plaquinha-cardapio.webp", "Plaquinha de cardápio", "Cardápio digital no celular do cliente."],
+    ["plaquinhas", "assets/plaquinha-tripla.webp", "Placa 3 em 1 (a sua escolha)", "Você escolhe as 3 funções: Google, Instagram, Pix, WhatsApp, Wi-Fi ou cardápio em uma única peça."],
+    ["chaveiros", "assets/chaveiro-java.webp", "Chaveiro Java", "Chaveiro de programador em impressão 3D."],
+    ["chaveiros", "assets/chaveiro-codigo.webp", "Chaveiro código", "Chaveiro de programador em impressão 3D."],
+    ["chaveiros", "assets/chaveiro-github.webp", "Chaveiro GitHub", "Chaveiro de programador em impressão 3D."],
+    ["chaveiros", "assets/chaveiro-python.webp", "Chaveiro Python", "Chaveiro de programador em impressão 3D."],
+    ["chaveiros", "assets/chaveiro-javascript.webp", "Chaveiro JavaScript", "Chaveiro de programador em impressão 3D."],
+    ["chaveiros", "assets/chaveiro-csharp.webp", "Chaveiro C#", "Chaveiro de programador em impressão 3D."],
+    ["chaveiros", "assets/chaveiro-vscode.webp", "Chaveiro vscode", "Chaveiro de programador em impressão 3D."]
+  ];
+  var cfg = window.NEX_CFG || {};
+  function esc(t) { return String(t).replace(/[&<>"']/g, function (c) { return "&#" + c.charCodeAt(0) + ";"; }); }
+  function start() {
+    var WA = "https://wa.me/5534988387442?text=";
+    var gl = document.getElementById("gl"), nav = document.getElementById("catnav");
+    nav.innerHTML = [["todos", "Todos"]].concat(CATS).map(function (c) {
+      return '<button type="button" aria-pressed="false" data-f="' + esc(c[0]) + '">' + esc(c[1]) + "</button>";
+    }).join("");
+    var btns = nav.querySelectorAll("button");
+    gl.innerHTML = P.map(function (p, i) {
+      var msg = encodeURIComponent("Olá! Quero saber mais sobre: " + p[2]);
+      return '<article class="it rv" data-c="' + esc(p[0]) + '" data-i="' + i + '">' +
+        '<button type="button" class="zoom" aria-label="Ampliar imagem: ' + esc(p[2]) + '">' +
+        '<img src="' + esc(p[1]) + '" alt="' + esc(p[2]) + '" width="640" height="960" loading="lazy"><span class="lupa" aria-hidden="true">⤢</span></button>' +
+        '<div><h3>' + esc(p[2]) + "</h3><p>" + esc(p[3]) + '</p><a href="' + WA + msg + '" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>';
+    }).join("");
+    window.nexReveal && window.nexReveal(gl);
+    var vz = document.createElement("p"); vz.className = "vazio"; vz.hidden = true;
+    vz.textContent = "Em breve, novos produtos nesta categoria."; gl.after(vz);
+
+    function filtrar(f) {
+      if (!CATS.some(function (c) { return c[0] === f; })) f = "todos";
+      btns.forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.f === f); });
+      history.replaceState(null, "", f === "todos" ? location.pathname : "#" + f);
+      vz.hidden = !!gl.querySelector(".it") && (f === "todos" || !!gl.querySelector('.it[data-c="' + f + '"]'));
+      gl.querySelectorAll(".it").forEach(function (i) {
+        var hide = f !== "todos" && i.dataset.c !== f;
+        i.hidden = hide;
+        if (!hide) { i.classList.remove("in"); void i.offsetWidth; i.classList.add("in"); }
+      });
+    }
+    btns.forEach(function (b) { b.onclick = function () { filtrar(b.dataset.f); }; });
+      filtrar(decodeURIComponent(location.hash.slice(1)) || "todos");
+    window.addEventListener("hashchange", function () { filtrar(decodeURIComponent(location.hash.slice(1)) || "todos"); });
+
+    /* modal */
+    var m = document.getElementById("mdl"), mi = document.getElementById("mi"), cur = 0, last = null;
+    function vis() { return Array.prototype.filter.call(gl.querySelectorAll(".it"), function (i) { return !i.hidden; }); }
+    function show(i) {
+      var p = P[i]; cur = i;
+      mi.classList.remove("on");
+      mi.onload = function () { mi.classList.add("on"); };
+      mi.src = p[1]; mi.alt = p[2];
+      document.getElementById("mt").textContent = p[2];
+      document.getElementById("md").textContent = p[3];
+      document.getElementById("mw").href = WA + encodeURIComponent("Olá! Quero saber mais sobre: " + p[2]);
+    }
+    function step(d) {
+      var v = vis().map(function (e) { return +e.dataset.i; });
+      show(v[(v.indexOf(cur) + d + v.length) % v.length]);
+    }
+    function abrir(i) {
+      last = document.activeElement; show(i);
+      m.hidden = false; void m.offsetWidth; m.classList.add("open");
+      document.body.style.overflow = "hidden";
+      document.getElementById("mx").focus();
+    }
+    function fechar() {
+      m.classList.remove("open"); document.body.style.overflow = "";
+      setTimeout(function () { m.hidden = true; }, 250);
+      if (last) last.focus();
+    }
+    gl.addEventListener("click", function (e) {
+      var b = e.target.closest(".zoom"); if (b) abrir(+b.closest(".it").dataset.i);
+    });
+    document.getElementById("mx").onclick = fechar;
+    document.getElementById("mp").onclick = function () { step(-1); };
+    document.getElementById("mnx").onclick = function () { step(1); };
+    m.addEventListener("click", function (e) { if (e.target === m) fechar(); });
+    document.addEventListener("keydown", function (e) {
+      if (m.hidden) return;
+      if (e.key === "Escape") fechar();
+      if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "ArrowRight") step(1);
+    });
+  }
+  if (cfg.url && cfg.anon) {
+    var H = { apikey: cfg.anon }; if (cfg.anon.indexOf("sb_") !== 0) H.Authorization = "Bearer " + cfg.anon;
+    var q = function (t) { return fetch(cfg.url + "/rest/v1/" + t, { headers: H }).then(function (r) { return r.json(); }); };
+    Promise.all([q("categories?select=slug,name&order=position,name"),
+      q("products?select=name,description,image_url,categories(slug)&order=position,created_at")]).then(function (r) {
+      if (Array.isArray(r[0]) && Array.isArray(r[1]) && r[0].length) {
+        CATS = r[0].map(function (c) { return [c.slug, c.name]; });
+        P = r[1].map(function (p) { return [p.categories.slug, p.image_url, p.name, p.description]; });
+      }
+      start();
+    }).catch(start);
+  } else start();
+})();
+</script>
+</body>
+</html>
